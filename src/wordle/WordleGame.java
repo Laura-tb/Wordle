@@ -124,12 +124,11 @@ public class WordleGame {
       System.out.print("Introduce una palabra de 5 letras: ");
       palabra = scanner.nextLine().toUpperCase();
 
-      if (palabra.length() != WORD_LENGTH) {
-        System.out.println("Error, la palabra debe ser de 5 letras.");
+      if (!palabra.matches("[a-zA-Z]{5}")) {
+        System.out.println("Error, la palabra debe ser de 5 letras y contener solo letras.");
         WordleFileManager.mostrarHistorial("Files/triesHistory.txt",palabra, secretWord);
       }
-
-    } while (palabra.length() != WORD_LENGTH);
+    } while (!palabra.matches("[a-zA-Z]{5}"));
 
     return palabra;
   }
