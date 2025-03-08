@@ -1,0 +1,18 @@
+LUZ
+ELEFANTE
+PERRO
+44444
+GATOS
+FUEGO
+NUBES
+VERDE
+
+Nueva partida.
+Historial de intentos:
+
+LUZ
+ELEFANTE
+ARBOL
+MUNDO
+NUBES
+GATOS

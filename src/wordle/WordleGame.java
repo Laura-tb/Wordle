@@ -47,7 +47,7 @@ public class WordleGame {
     System.out.println(" ");
     System.out.println("Tienes " + MAX_TRIES + " intentos restantes.");
 
-    
+    WordleFileManager.mostrarHistorial("Files/triesHistory.txt", "", palabra, true);
     //Bucle for que permite al usuario realizar intentos hasta que adivine  palabra o se quede sin intentos.
     for (int i = 0; i < MAX_TRIES && encontrado == false; i++) {
 
@@ -59,7 +59,7 @@ public class WordleGame {
         encontrado = true;
         
         triesHistory[i] = palabra;
-        WordleFileManager.mostrarHistorial("Files/triesHistory.txt", palabra, secretWord);
+        WordleFileManager.mostrarHistorial("Files/triesHistory.txt", palabra, secretWord, false);
         
         triesHistory[i] = WordleFeedBack.feedBackString(palabra, secretWord);
         showTriesHistory();
@@ -71,7 +71,7 @@ public class WordleGame {
         System.out.println("No es correcta. Tienes " + remainingAttempts + " intentos restantes.");
         
         triesHistory[i] = palabra;
-        WordleFileManager.mostrarHistorial("Files/triesHistory.txt",palabra, secretWord);
+        WordleFileManager.mostrarHistorial("Files/triesHistory.txt",palabra, secretWord, false);
         
         triesHistory[i] = WordleFeedBack.feedBackString(palabra, secretWord);
         showTriesHistory();
@@ -126,7 +126,7 @@ public class WordleGame {
 
       if (!palabra.matches("[a-zA-Z]{5}")) {
         System.out.println("Error, la palabra debe ser de 5 letras y contener solo letras.");
-        WordleFileManager.mostrarHistorial("Files/triesHistory.txt",palabra, secretWord);
+        WordleFileManager.mostrarHistorial("Files/triesHistory.txt",palabra, secretWord, false);
       }
     } while (!palabra.matches("[a-zA-Z]{5}"));
 

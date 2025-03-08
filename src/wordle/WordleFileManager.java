@@ -61,7 +61,7 @@ public class WordleFileManager {
    * @param palabra Palabra ingresada por usuario
    * @param secretWord Palabra secreta de la partida.
   */
-  public static void mostrarHistorial(String archivoHis, String palabra, String secretWord){
+  public static void mostrarHistorial(String archivoHis, String palabra, String secretWord, boolean nuevaPartida){
       
     FileWriter fw = null; 
     PrintWriter pw = null; 
@@ -70,6 +70,12 @@ public class WordleFileManager {
       fw = new FileWriter(archivoHis, true);
       pw = new PrintWriter(fw);
 
+      if (nuevaPartida) {
+        pw.println();
+        pw.println("Nueva partida.");
+        pw.println("Historial de intentos:");
+      }
+            
       pw.println(palabra);  
       
     } catch (IOException ioe) {
